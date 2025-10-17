@@ -1,6 +1,8 @@
 window.addEventListener("DOMContentLoaded",function() {
   //Challenge 1: Create a variable scene for the <a-scene> component in the HTML
-
+  let = document.createElement("a-box")
+  let scene= document.querySelector("a-scene")
+  scene.append(BaseAudioContext;)
 
   //Challenge 2: Create a variable for <a-dodecahedron> and create it.
 
