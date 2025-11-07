@@ -14,13 +14,13 @@ window.addEventListener("DOMContentLoaded",function() {
   car.l = 0;
   car.la = -0.05;
   dude.g = 0;
-  dude.gr = -0.05;
+  dude.gr = 0.0005;
   pokemonball.o = 0;
   pokemonball.ot = -0.5;
   rocket.f = 0;
   rocket.fy = .09;
-  sun.p = 0;
-  sun.pi = -0.05;
+  sun.p = 0.5;
+  sun.pi = 1;
   
   loop();
 })
@@ -32,7 +32,10 @@ function loop(){
   pokemonball.setAttribute("rotation",{x:0, y:pokemonball.o, z:0});
   rocket.f += rocket.fy;
   rocket.setAttribute("position",{x:0, y:rocket.f, z:0});
-  
+  dude.g += dude.gr;
+  dude.setAttribute("scale",{x:dude.g, y:dude.g, z:dude.g});
+  sun.p += sun.pi;
+  sun.setAttribute("opacity", sun.p);
   window.requestAnimationFrame(loop);
 
 }

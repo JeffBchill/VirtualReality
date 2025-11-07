@@ -9,6 +9,11 @@
    position them in the maze.   In Challenge 3 and 4, you will generate the maze along with any other object 
    you chose to put in the maze.  Get Creative!
 */
+class Spider{
+  constructor(x,y,z){
+    this.x=x;
+  }
+}
 
 let maze = [
   "----------------------",
