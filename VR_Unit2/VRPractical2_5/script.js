@@ -9,21 +9,15 @@
    position them in the maze.   In Challenge 3 and 4, you will generate the maze along with any other object 
    you chose to put in the maze.  Get Creative!
 */
-class Spider{
-  constructor(x,y,z){
-    this.x=x;
-  }
-}
-
 let maze = [
   "----------------------",
   "----------------------",
   "----------------------",
   "----------------------",
   "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
+  "--------x-x------------",
+  "---------------------",
+  "--------x-x------------",
   "----------------------",
   "----------------------",
   "----------------------",
@@ -46,6 +40,19 @@ window.addEventListener("DOMContentLoaded",function() {
        Make an appropriate decision based on the characters you chose to enter 
        in the maze.  Create an instance of the corresponding object.
     */
+    let row = maze[r];
+    let cols = row.split("");
+    for(let c = 0; c < cols.length; c++){
+      if(cols[c] == "x"){
+        new Brick(c,1,r)
+      }
+      else if(cols[c] == "B"){
+        new Bomb(c,1,r);
+      }
+      else if(cols[c]=="P"){
+        new Piller(c,1,r)
+      }
+    }
   }
 
 })
